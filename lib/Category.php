@@ -10,14 +10,14 @@
 
         public function getAllCategory()
         {
-            $this->db->query("SELECT * FROM categories");
+            $this->db->query("SELECT * FROM category");
             $result=$this->db->resultSet();
             return $result;
         }
 
         public function getSingleCategory($cate_id)
         {
-            $this->db->query("SELECT * FROM categories where id= :category ");
+            $this->db->query("SELECT * FROM category where id= :category ");
             $this->db->bind(":category",$cate_id);
             $result=$this->db->singleResult();
             return $result;
